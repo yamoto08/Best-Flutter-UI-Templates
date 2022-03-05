@@ -27,11 +27,10 @@ class MyApp extends StatelessWidget {
     ));
     return MaterialApp(
       title: 'Flutter UI',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         textTheme: AppTheme.textTheme,
-        platform: TargetPlatform.iOS,
+        platform: TargetPlatform.android,
       ),
       home: NavigationHomeScreen(),
     );
