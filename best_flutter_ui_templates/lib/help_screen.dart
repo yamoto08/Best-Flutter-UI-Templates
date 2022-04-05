@@ -23,10 +23,7 @@ class _HelpScreenState extends State<HelpScreen> {
           body: Column(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).padding.top,
-                    left: 16,
-                    right: 16),
+                padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 16, right: 16),
                 child: Image.asset('assets/images/helpImage.png'),
               ),
               Container(
@@ -58,13 +55,9 @@ class _HelpScreenState extends State<HelpScreen> {
                       height: 40,
                       decoration: BoxDecoration(
                         color: Colors.blue,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(4.0)),
+                        borderRadius: const BorderRadius.all(Radius.circular(4.0)),
                         boxShadow: <BoxShadow>[
-                          BoxShadow(
-                              color: Colors.grey.withOpacity(0.6),
-                              offset: const Offset(4, 4),
-                              blurRadius: 8.0),
+                          BoxShadow(color: Colors.grey.withOpacity(0.6), offset: const Offset(4, 4), blurRadius: 8.0),
                         ],
                       ),
                       child: Material(

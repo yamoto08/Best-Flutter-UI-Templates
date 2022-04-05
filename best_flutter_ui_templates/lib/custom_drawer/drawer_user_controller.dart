@@ -102,13 +102,13 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
                       //transform we use for the stable drawer  we, not need to move with scroll view
                       transform: Matrix4.translationValues(scrollController!.offset, 0.0, 0.0),
                       child: HomeDrawer(
-                        screenIndex: widget.screenIndex == null ? DrawerIndex.HOME : widget.screenIndex,
+                        screenIndex: widget.screenIndex ?? DrawerIndex.HOME,
                         iconAnimationController: iconAnimationController,
                         callBackIndex: (DrawerIndex indexType) {
                           onDrawerClick();
                           try {
                             widget.onDrawerCall!(indexType);
-                          } catch (e) {}
+                          } catch (_) {}
                         },
                       ),
                     );
@@ -152,11 +152,9 @@ class _DrawerUserControllerState extends State<DrawerUserController> with Ticker
                               borderRadius: BorderRadius.circular(AppBar().preferredSize.height),
                               child: Center(
                                 // if you use your own menu view UI you add form initialization
-                                child: widget.menuView != null
-                                    ? widget.menuView
-                                    : AnimatedIcon(
-                                        icon: widget.animatedIconData ?? AnimatedIcons.arrow_menu,
-                                        progress: iconAnimationController!),
+                                child: widget.menuView ?? AnimatedIcon(
+                                    icon: widget.animatedIconData ?? AnimatedIcons.arrow_menu,
+                                    progress: iconAnimationController!),
                               ),
                               onTap: () {
                                 FocusScope.of(context).requestFocus(FocusNode());

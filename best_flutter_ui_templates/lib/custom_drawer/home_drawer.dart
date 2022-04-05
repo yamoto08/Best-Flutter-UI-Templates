@@ -14,6 +14,7 @@ class HomeDrawer extends StatefulWidget {
 
 class _HomeDrawerState extends State<HomeDrawer> {
   List<DrawerList>? drawerList;
+
   @override
   void initState() {
     setDrawerListArray();
@@ -167,7 +168,7 @@ class _HomeDrawerState extends State<HomeDrawer> {
       ),
     );
   }
-  
+
   void onTapped() {
     print('Doing Something...'); // Print to console.
   }
